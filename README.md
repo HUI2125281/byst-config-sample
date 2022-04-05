@@ -14,3 +14,13 @@
 
 请注意防火墙是否打开
 
+# 其他配置
+
+BYST 单节点 N:M 加速测试，BYST Client 配置 M=7：
+```
+Connect To:STRING=vps1:6900; boost 7 -f:0.9,5,300
+```
+在 vps2 上装了个 HAProxy 做影子加速节点，BYST Client 配置双节点分布式 N:M 聚合加M=5：
+```
+Connect To:STRING=vps1:6900; boost 5 -f:0.9,3,100 -shadows:vps2:6900
+```
