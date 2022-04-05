@@ -25,8 +25,11 @@ Connect To:STRING=vps1:6900; boost 7 -f:0.9,5,300
 Connect To:STRING=vps1:6900; boost 5 -f:0.9,3,100 -shadows:vps2:6900
 ```
 使用iptables：
+```
+
 echo "1" > /proc/sys/net/ipv4/ip_forward
 cat /proc/sys/net/ipv4/ip_forward
 =1为开启转发
 iptables -t nat -A PREROUTING -p tcp --dport 8080 -j DNAT --to-destination vps2内网ip
 iptables -t nat -A POSTROUTING -p tcp -d vps1内网ip --dport 8080 -j SNAT --to-source vps2内网ip
+```
