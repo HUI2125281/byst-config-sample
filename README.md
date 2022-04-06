@@ -4,8 +4,13 @@
 # 遇到问题可以查这些问题
 看看日志
 
-用telnet，curl查看服务是否可用
+用nc，curl查看服务是否可用，查看ip地址，测试下载速度
+```
+nc -z -w 3 10.0.0.40 3391  && echo $?
+curl --proxy http://127.0.0.1:8081 -L ip.sb
+curl  --proxy http://127.0.0.1:8080  -Lo /dev/null -skw "%{speed_download}\n"  http://cachefly.cachefly.net/100mb.test
 
+```
 用netstat看服务是否起来
 
 一层层的找问题
