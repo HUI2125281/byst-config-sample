@@ -16,7 +16,8 @@ Connect To:STRING=<you server here>:3389
 ```
   ; boost 7 -f:0.9,5,300  
 ```
-  我还没搞懂。
+  我还没全搞懂。 7 是覆盖 Max Boost Spawns，客户端的数值要小于等于服务器的。 
+  
 
 可以开三个窗口，分别是server，shadow，本地，本地发请求，使用nload在server和shadow查看网络流量
 
